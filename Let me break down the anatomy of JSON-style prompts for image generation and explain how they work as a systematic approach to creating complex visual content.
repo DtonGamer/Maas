@@ -1,0 +1,75 @@
+Let me break down the anatomy of JSON-style prompts for image generation and explain how they work as a systematic approach to creating complex visual content.
+
+## What JSON Prompts Actually Are
+
+JSON prompts are structured instructions that borrow the hierarchical organization of JSON (JavaScript Object Notation) formatting to create highly detailed, nested specifications for image generation. Unlike traditional prose prompts that describe scenes in flowing sentences, JSON prompts organize information into labeled categories and subcategories, which helps AI models parse complex requirements more reliably.
+
+Think of it like the difference between giving someone verbal directions versus handing them a detailed blueprint. The prose approach might say "draw a whiteboard with a diagram showing how data flows from users to advertisers." The JSON approach creates explicit containers for every element: what the title says, what color marker it uses, where arrows point, what text appears in each section, and how those sections relate spatially.
+
+## Why This Structure Works Better for Complex Images
+
+Image generation models excel at understanding relationships when information is explicitly structured. When you nest details hierarchically, the model can better maintain consistency across the entire image. For instance, if you specify that all stage headers use blue marker in a particular section, then list five elements under that stage, the model understands those five elements belong to the blue marker context.
+
+The structure also prevents what I call "detail fade" in traditional prompts. When you write a three-hundred-word prose description, details mentioned early compete for attention with details mentioned late. The model might emphasize whichever elements appear most frequently or most recently in the text. With JSON structure, every element gets equal hierarchical weight based on its position in the tree, not its position in a linear text stream.
+
+## The Core Components of a JSON-Style Prompt
+
+Every effective JSON prompt contains several essential layers. At the outermost level, you define the scene itself—what kind of image this fundamentally is. In our Sperm Racing example, the scene is "a photo of a large whiteboard with detailed hand-drawn marker illustration." This sets the medium, the format, and the fundamental constraints.
+
+The next layer typically handles composition and layout. This is where you specify vertical versus horizontal flow, whether elements branch or stack linearly, and what the overall spatial organization looks like. For a whiteboard, this might mean "vertical flow with branching side details" or "three-column layout with connecting arrows."
+
+Then you move into content sections. Each major section gets its own nested object with a title, visual style specifications, and an array of elements that belong to it. This is where the hierarchical power really shines. Under "Stage One: The Setup," you might have five different elements, each with its own icon, text details, emphasis markers, and connections to other stages.
+
+Within each element, you can nest even deeper. An element might have a main icon, a text bubble, a starburst emphasis, supporting details in smaller text, and connection arrows. Each of these can have its own styling specifications—marker color, line weight, emphasis technique, positioning relative to other elements.
+
+Finally, you include metadata and technical specifications at the bottom. This covers aspect ratio, lighting conditions, camera angle, authenticity details like smudges and erasures, and any other environmental factors that affect the overall aesthetic.
+
+## How to Build One Step by Step
+
+Let me walk you through creating a JSON prompt from scratch. Suppose you want to visualize how a cryptocurrency pump-and-dump scheme works, using the whiteboard style.
+
+You start by asking yourself: what is the fundamental structure of this story? In this case, it's a temporal sequence—events happen in order, leading to a specific outcome. That suggests a vertical or diagonal flow diagram. You also know you want to emphasize deception, so you might plan visual layers where surface claims get contradicted by underlying reality.
+
+Begin with your scene definition. Open with a clear statement of what medium you're using and what overall aesthetic you're targeting. For our crypto example, you might write: "A photo of a large whiteboard with hand-drawn dry-erase marker illustration in casual sketch style, documenting a cryptocurrency pump-and-dump scheme."
+
+Next, establish your layout structure. Specify whether information flows top-to-bottom, left-to-right, or in some other pattern. For a pump-and-dump, a vertical flow makes sense because it's a temporal progression. You might add: "Vertical flow diagram with five distinct stages, each marked by color-coded sections and connected by thick arrows showing the progression of manipulation."
+
+Now comes the content architecture. Create a nested section for each stage of the scheme. Under "Stage One: Token Launch," you list all the visual elements that belong to this stage. You might have a stick figure labeled "Dev Team," a cryptocurrency logo, text describing initial investment, and an arrow showing token distribution. Each element gets its own specification within the stage.
+
+The key is to think hierarchically. Don't just list "stick figure, logo, text, arrow" in a flat sequence. Instead, structure it as: Stage One contains three main visual elements. Element one is the dev team representation, which consists of a stick figure with specific labels and a thought bubble containing specific text. Element two is the token logo, which should be drawn in a specific marker color and positioned relative to element one. Element three is the distribution mechanism, shown as arrows flowing from the logo to other parts of the diagram.
+
+As you build each stage, maintain parallel structure. If Stage One has sections for "visual icon," "main claim," "reality check," and "connection to next stage," then Stages Two through Five should follow the same pattern. This consistency helps the model understand that you're creating a repeating template with variations in content rather than five completely different types of information.
+
+Pay special attention to visual hierarchy and emphasis. In our Sperm Racing prompt, I used different techniques to signal importance: starburst shapes for shocking revelations, dashed boxes for key exposures, larger text for critical numbers, color coding for different types of information. These aren't arbitrary—they guide the viewer's eye through the argument you're making.
+
+Include connector elements explicitly. Don't assume the model will understand that stages connect logically. Specify arrows, their labels, their thickness, and what they represent. In the Sperm Racing example, I labeled arrows with things like "creates manufactured virality" and "labeled 'behavioral capture'" so the connections between stages aren't just spatial but conceptual.
+
+## Advanced Techniques: Side Panels and Annotations
+
+One powerful technique in JSON prompts is creating side panels for meta-analysis. In the Sperm Racing visualization, I added a "MaaS Lens" panel on the right side that interprets the entire diagram through game theory. This creates a two-layer reading: the main diagram documents what happens, while the side panel explains why it works.
+
+You can also build in authenticity markers that make the image feel more real. Under a section called "whiteboard details," I listed specific imperfections: marker smudging, coffee stains, crossed-out words, varying pressure in handwriting, visible marker brands in the tray. These details convince the model to render the image as a photograph of an actual object rather than a digital illustration pretending to be a whiteboard.
+
+Another advanced move is including quotations and source citations. This adds evidentiary weight to the visualization. In the prompt, I embedded actual quotes from Eric Zhu and other participants, styled in quotation marks with attribution. At the bottom, I added a caption overlay listing sources. This transforms the image from opinion into documentation.
+
+## Common Pitfalls and How to Avoid Them
+
+The biggest mistake people make with JSON prompts is over-nesting to the point of confusion. Yes, hierarchy is powerful, but seven levels deep becomes counterproductive. If you find yourself writing things like "stage_two.element_three.sub_element_two.annotation.style.marker_color," you've gone too far. Flatten your structure by combining related details into single descriptive strings rather than breaking every adjective into its own nested property.
+
+Another error is mixing abstraction levels. Don't alternate between high-level conceptual descriptions and pixel-perfect positioning instructions. Either specify layout abstractly using terms like "upper left quadrant" and "below the main title," or give precise coordinates, but don't jump between the two approaches within the same prompt.
+
+People also forget to specify negative space and transitions. It's not enough to say what appears—you also need to indicate what doesn't appear, where breathing room exists, and how elements transition from one section to another. In the Sperm Racing prompt, I explicitly noted that arrows connect stages, that boxes use dashed versus solid lines for different purposes, and that whitespace separates major sections.
+
+Finally, many JSON prompts fail because they don't account for the medium's constraints. A whiteboard has physical limits—you can't use fifty different marker colors, text can't be microscopically small and still readable, and the surface has a glossy texture that affects lighting. When specifying details, ask yourself: could someone actually draw this on a real whiteboard with real markers in real time? If not, adjust your specifications to match physical reality.
+
+## Adapting This Technique to Other Visualization Styles
+
+The JSON approach works for any complex, multi-element image where relationships matter. If you wanted to create a magazine layout instead of a whiteboard, you'd adjust the scene definition to "a photo of a glossy magazine article spread across two pages" and modify your element specifications to include typography choices, image placement, pull quotes, and column layouts instead of marker colors and handwriting styles.
+
+For an infographic, you might structure sections around data visualization types: "pie chart showing market share," "bar graph comparing growth rates," "timeline showing key events." Each section would nest specifications for colors, labels, legends, and data accuracy.
+
+For a hand-drawn comic strip, your stages might become panels, each with its own frame, characters, speech bubbles, and action. The nested structure would specify panel borders, character expressions, dialogue text, sound effects, and panel-to-panel transitions.
+
+The underlying principle remains constant: break your vision into hierarchical components, specify each component's attributes explicitly, define relationships between components, and include environmental details that make the final image feel authentic to its medium. Whether you're creating a whiteboard documentation, a magazine exposé, a data visualization, or a comic narrative, the JSON structure helps you think systematically about every element while maintaining creative control over the final composition.
+
+This approach transforms prompt engineering from intuitive art into methodical craft. You're not hoping the model interprets your intentions correctly—you're architecting specifications so precise that the model has a clear blueprint for exactly what you're envisioning.
